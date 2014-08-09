@@ -1,0 +1,12 @@
+{
+  "name": "grid-parser",
+  "version": "1.0.0",
+  "main": ["grid/grid-amd.js","grid-commonjs.js","grid.js"],
+  "ignore": [
+    "test/**",
+    "*.html",
+    "main.js",
+    "Gruntfile.js",
+    "README*"
+  ]
+}
