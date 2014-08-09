@@ -7,6 +7,8 @@
     "*.html",
     "main.js",
     "Gruntfile.js",
-    "README*"
+    "README*",
+	".gitignore",
+	".travis.yml"
   ]
 }
