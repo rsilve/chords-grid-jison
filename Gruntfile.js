@@ -8,13 +8,22 @@ module.exports = function(grunt) {
 		grid_commonjs : {
 			options: { moduleType : 'commonjs' },
 			files : {
-				'target/grid-commonjs.js' : 'src/grid.jison'
+				'grid/grid-commonjs.js' : 'src/grid.jison'
 			}
 		},
 		grid_amd : {
 			options: { moduleType : 'amd' },
 			files : {
-				'target/grid-amd.js' : 'src/grid.jison'
+				'grid/grid-amd.js' : 'src/grid.jison'
+			}
+		},
+		grid : {
+			options: { 
+				moduleType : 'js', 
+				moduleName: 'GridParser'
+			},
+			files : {
+				'grid/grid.js' : 'src/grid.jison'
 			}
 		}
     },
@@ -38,7 +47,7 @@ module.exports = function(grunt) {
  
 
   grunt.registerTask('live', ['regarde']);
-  grunt.registerTask('test', ['clean', 'jison', 'nodeunit']);
+  grunt.registerTask('test', ['nodeunit']);
   
   // Default task(s).
   grunt.registerTask('default', ['jison']);
