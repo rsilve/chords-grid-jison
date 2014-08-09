@@ -38,7 +38,7 @@ module.exports = function(grunt) {
  
 
   grunt.registerTask('live', ['regarde']);
-  grunt.registerTask('test', ['nodeunit']);
+  grunt.registerTask('test', ['clean', 'jison', 'nodeunit']);
   
   // Default task(s).
   grunt.registerTask('default', ['jison']);
