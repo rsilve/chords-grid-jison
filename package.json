@@ -1,0 +1,16 @@
+{
+  "name": "grid-parser",
+  "version": "1.0.0",
+  "description": "javascript parser for chords grid",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Silve <robert@silve.net>",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+	"grunt" : "~0.4.5",
+    "grunt-jison": "~1.3.2",
+    "jison": "~0.4.2"
+  }
+}
