@@ -2,7 +2,7 @@
   "name": "grid-parser",
   "version": "1.1.0",
   "description": "javascript parser for chords grid",
-  "main": "src/grid.jison",
+  "main": "grid/grid.js",
   "scripts": {
     "build": "jison -o grid/grid.js src/grid.jison",
     "test": "nodeunit test"
