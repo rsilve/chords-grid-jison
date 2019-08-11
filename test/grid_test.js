@@ -1,6 +1,6 @@
 'use strict';
 
-var grid = require('../grid/grid-commonjs.js');
+var grid = require('../grid/grid.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
