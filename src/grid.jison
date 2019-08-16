@@ -79,6 +79,7 @@ measure
 			
 			var count = $1.chords.length;
 			var duration  = $1.chords[0].duration;
+			var duration2  = 0;
 			if (count == 1) {
             	$1.type = 1;
         	}
@@ -91,14 +92,20 @@ measure
         	if (count == 2 && duration == 3) {
             	$1.type = 4;
         	}
-        	if (count == 3 && duration == 1) {
-            	$1.type = 5;
+        	if (count == 3) {
+        	    duration2 = $1.chords[1].duration;
         	}
-        	if (count == 3 && duration == 2) {
-            	$1.type = 6;
+        	if (count == 3 && duration == 1 && duration2 == 1) {
+             	$1.type = 5;
+         	}
+         	if (count == 3 && duration == 1 && duration2 == 2) {
+              	$1.type = 6;
+          	}
+          	if (count == 3 && duration == 2) {
+            	$1.type = 7;
         	}
         	if (count == 4) {
-            	$1.type = 7;
+            	$1.type = 8;
         	}
 		%}
 	;

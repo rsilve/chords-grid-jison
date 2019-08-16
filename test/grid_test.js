@@ -145,26 +145,28 @@ exports.jison = {
 		test.done();
   },
   measureType : function (test) {
-        test.expect(14);
+        test.expect(16);
         [
         	{grid : "A", type : 1},
         	{grid : "A B _ _", type : 2},
         	{grid : "A B", type : 3},
         	{grid : "A _ _ B", type : 4},
-        	{grid : "A B C _", type : 5},
-        	{grid : "A _ B C ", type : 6},
-        	{grid : "A B C D", type : 7},
+			{grid : "A B C _", type : 5},
+			{grid : "A B _ C", type : 6},
+        	{grid : "A _ B C", type : 7},
+        	{grid : "A B C D", type : 8},
         
         ].forEach ( function(c) {
-        	var rows = grid.parse(c.grid);
+        	let rows = grid.parse(c.grid);
 			test.ok(rows);
+			console.log(rows)
 			test.equal(rows[0][0].type, c.type);
 		}); 
 		test.done();
   },
   severalLine : function (test) {
         test.expect(10);
-        var rows = grid.parse("A\nB");
+        let rows = grid.parse("A\nB");
         test.ok(rows);
 		test.equal(rows.length, 2);     // 2 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
@@ -180,7 +182,7 @@ exports.jison = {
   },
    severalNewLine : function (test) {
         test.expect(2);
-        var rows = grid.parse("A\n\nB\nB");
+        let rows = grid.parse("A\n\nB\nB");
         test.ok(rows);
 		test.equal(rows.length, 3);     // 3 ligne
 		test.done();
@@ -188,7 +190,7 @@ exports.jison = {
   
    beginWithNewLine : function (test) {
         test.expect(2);
-        var rows = grid.parse("\nA\n\nB\nB");
+        let rows = grid.parse("\nA\n\nB\nB");
         test.ok(rows);
 		test.equal(rows.length, 3);     // 3 ligne
 		test.done();
@@ -196,7 +198,7 @@ exports.jison = {
   
   endWithNewLine : function (test) {
         test.expect(2);
-        var rows = grid.parse("A\n\nB\nB\n");
+        let rows = grid.parse("A\n\nB\nB\n");
         test.ok(rows);
 		test.equal(rows.length, 3);     // 3 ligne
 		test.done();
@@ -204,7 +206,7 @@ exports.jison = {
   errorMessage : function (test) {
         test.expect(1);
         try {
-        	var rows = grid.parse("A B A R");
+        	let rows = grid.parse("A B A R");
 		} catch(e) {
         	//console.log(e.message.split("\n").slice(0,3).join("\n"));
         	test.equal(1,1)

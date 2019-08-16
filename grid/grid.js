@@ -129,6 +129,7 @@ case 19:
 			
 			var count = $$[$0].chords.length;
 			var duration  = $$[$0].chords[0].duration;
+			var duration2  = 0;
 			if (count == 1) {
             	$$[$0].type = 1;
         	}
@@ -141,14 +142,20 @@ case 19:
         	if (count == 2 && duration == 3) {
             	$$[$0].type = 4;
         	}
-        	if (count == 3 && duration == 1) {
-            	$$[$0].type = 5;
+        	if (count == 3) {
+        	    duration2 = $$[$0].chords[1].duration;
         	}
-        	if (count == 3 && duration == 2) {
-            	$$[$0].type = 6;
+        	if (count == 3 && duration == 1 && duration2 == 1) {
+             	$$[$0].type = 5;
+         	}
+         	if (count == 3 && duration == 1 && duration2 == 2) {
+              	$$[$0].type = 6;
+          	}
+          	if (count == 3 && duration == 2) {
+            	$$[$0].type = 7;
         	}
         	if (count == 4) {
-            	$$[$0].type = 7;
+            	$$[$0].type = 8;
         	}
 		
 break;
