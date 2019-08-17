@@ -35,7 +35,7 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.equal(rows[0][0].chords[0].duration, 4); 
 		test.done();
   },
@@ -47,9 +47,9 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 2);  // 2 Accords
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.equal(rows[0][0].chords[0].duration, 2); 
-		test.equal(rows[0][0].chords[1].chord, "B"); 
+		test.equal(rows[0][0].chords[1].chord.raw, "B");
 		test.equal(rows[0][0].chords[1].duration, 2); 
 		test.done();
   },
@@ -61,7 +61,7 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.equal(rows[0][0].chords[0].duration, 4); 
 		test.done();
   },
@@ -93,7 +93,7 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.ok(rows[0][0].repeatLeft); 
 		test.done();
   },
@@ -105,7 +105,7 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.ok(rows[0][0].repeatRight); 
 		test.done();
   },
@@ -117,7 +117,7 @@ exports.jison = {
 		test.equal(rows.length, 1);     // 1 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A");
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.equal(rows[0][0].chords[0].duration, 4);  
 		test.ok(rows[0][0].part); 
 		test.equal(rows[0][0].part, "C"); 
@@ -128,7 +128,7 @@ exports.jison = {
         ["A", "B", "C", "D", "E", "F", "G"].forEach ( function(c) {
         	var rows = grid.parse(c);
 			test.ok(rows);
-			test.equal(rows[0][0].chords[0].chord, c);
+			test.equal(rows[0][0].chords[0].chord.raw, c);
 		}); 
 		test.done();
   },
@@ -140,7 +140,7 @@ exports.jison = {
         "A/G","A/G#","A/Gb", "Am/G", "Am/G#", "Am/Gb"].forEach ( function(c) {
         	var rows = grid.parse(c);
 			test.ok(rows);
-			test.equal(rows[0][0].chords[0].chord, c);
+			test.equal(rows[0][0].chords[0].chord.raw, c);
 		}); 
 		test.done();
   },
@@ -159,7 +159,6 @@ exports.jison = {
         ].forEach ( function(c) {
         	let rows = grid.parse(c.grid);
 			test.ok(rows);
-			console.log(rows)
 			test.equal(rows[0][0].type, c.type);
 		}); 
 		test.done();
@@ -171,12 +170,12 @@ exports.jison = {
 		test.equal(rows.length, 2);     // 2 ligne
 		test.equal(rows[0].length, 1);  // 1 mesure
 		test.equal(rows[0][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[0][0].chords[0].chord, "A"); 
+		test.equal(rows[0][0].chords[0].chord.raw, "A");
 		test.equal(rows[0][0].chords[0].duration, 4); 
 		
 		test.equal(rows[1].length, 1);  // 1 mesure
 		test.equal(rows[1][0].chords.length, 1);  // 1 Accord
-		test.equal(rows[1][0].chords[0].chord, "B"); 
+		test.equal(rows[1][0].chords[0].chord.raw, "B");
 		test.equal(rows[1][0].chords[0].duration, 4); 
 		test.done();
   },
