@@ -172,19 +172,22 @@ case 23:
  this.$ = { chord : $$[$0], duration: 1} 
 break;
 case 24:
- this.$ = {raw: $$[$0-4] + $$[$0-3] + $$[$0-2] + $$[$0-1] + $$[$0]} 
+ this.$ = {raw: $$[$0-4] + $$[$0-3] + $$[$0-2] + $$[$0-1] + $$[$0], note: $$[$0-4], note_modifier: $$[$0-3], base_note: $$[$0-1], base_note_modifier: $$[$0]} 
 break;
-case 25: case 27:
- this.$ = {raw: $$[$0-3] + $$[$0-2] + $$[$0-1] + $$[$0]} 
+case 25:
+ this.$ = {raw: $$[$0-3] + $$[$0-2] + $$[$0-1] + $$[$0], note: $$[$0-3], note_modifier: $$[$0-2], base_note: $$[$0]} 
 break;
 case 26:
- this.$ = {raw: $$[$0-1] + $$[$0]} 
+ this.$ = {raw: $$[$0-1] + $$[$0], note: $$[$0-1], note_modifier: $$[$0]} 
+break;
+case 27:
+ this.$ = {raw: $$[$0-3] + $$[$0-2] + $$[$0-1] + $$[$0], note: $$[$0-3], base_note: $$[$0-1], base_note_modifier: $$[$0]} 
 break;
 case 28:
- this.$ = {raw: $$[$0-2] + $$[$0-1] + $$[$0]} 
+ this.$ = {raw: $$[$0-2] + $$[$0-1] + $$[$0], note: $$[$0-2], base_note: $$[$0]} 
 break;
 case 29:
- this.$ = {raw: $$[$0]} 
+ this.$ = {raw: $$[$0], note: $$[$0]} 
 break;
 }
 },

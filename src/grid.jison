@@ -121,11 +121,11 @@ chord
 	;
 	
 chordname
-	: NOTE MODIFIER BASE NOTE MODIFIER	{ $$ = {raw: $1 + $2 + $3 + $4 + $5} }
-	| NOTE MODIFIER BASE NOTE 	{ $$ = {raw: $1 + $2 + $3 + $4} }
-	| NOTE MODIFIER				{ $$ = {raw: $1 + $2} }
-	| NOTE BASE NOTE MODIFIER   { $$ = {raw: $1 + $2 + $3 + $4} }
-	| NOTE BASE NOTE		    { $$ = {raw: $1 + $2 + $3} }
-	| NOTE 						{ $$ = {raw: $1} }
+	: NOTE MODIFIER BASE NOTE MODIFIER	{ $$ = {raw: $1 + $2 + $3 + $4 + $5, note: $1, note_modifier: $2, base_note: $4, base_note_modifier: $5} }
+	| NOTE MODIFIER BASE NOTE 	{ $$ = {raw: $1 + $2 + $3 + $4, note: $1, note_modifier: $2, base_note: $4} }
+	| NOTE MODIFIER				{ $$ = {raw: $1 + $2, note: $1, note_modifier: $2} }
+	| NOTE BASE NOTE MODIFIER   { $$ = {raw: $1 + $2 + $3 + $4, note: $1, base_note: $3, base_note_modifier: $4} }
+	| NOTE BASE NOTE		    { $$ = {raw: $1 + $2 + $3, note: $1, base_note: $3} }
+	| NOTE 						{ $$ = {raw: $1, note: $1} }
 	;
 
