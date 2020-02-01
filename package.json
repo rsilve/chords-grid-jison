@@ -1,17 +1,17 @@
 {
   "name": "grid-parser",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "javascript parser for chords grid",
   "main": "grid/grid.js",
   "scripts": {
     "build": "jison -o grid/grid.js src/grid.jison",
-    "test": "nodeunit test"
+    "test": "jest"
   },
   "author": "Robert Silve <robert@silve.net>",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "jison": "^0.4.18",
-    "nodeunit": "^0.11.3"
+    "jest": "^25.1.0",
+    "jison": "^0.4.18"
   },
   "dependencies": {}
 }
